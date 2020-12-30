@@ -1,0 +1,20 @@
+{% extends "app1/layout.html" %}
+
+{% block title %}
+  Triple DES Encryption
+{% endblock %}
+
+{% block body %}
+
+  <form class="" action="{% url 'app1:result' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h4>Key (192 bit): </h4>
+    {{ content.key }}<br>
+    <h4>File: </h4>
+    {{ content.file }}<br>
+    <h4>Encrypt/Decrypt</h4>
+    {{ content.choice }}
+    <input type="submit" name="submit" value="Submit">
+  </form>
+
+{% endblock %}
