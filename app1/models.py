@@ -11,5 +11,5 @@ class FileInput(models.Model):
     CHOICES1=[('encrypt', 'encrypt'),
              ('decrypt', 'decrypt')]
     key = models.CharField(max_length=24, validators=[MinLengthValidator(24)])
-    file = models.FileField(null=False)
+    file = models.ImageField(null=False)
     choice = models.CharField(choices=CHOICES1, max_length=20)
